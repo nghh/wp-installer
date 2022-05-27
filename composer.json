@@ -1,0 +1,50 @@
+{
+    "name": "nghh/wp-installer",
+    "type": "project",
+    "license": "MIT",
+    "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+    "homepage": "https://nghh.dev/wp-installer",
+    "authors": [
+      {
+        "name": "Jan Reiland",
+        "email": "jr@nghh.dev",
+        "homepage": "https://github.com/nghh"
+      }
+    ],
+    "keywords": [
+      "wordpress",
+      "stack",
+      "composer",
+      "wp"
+    ],
+    "config": {
+        "allow-plugins": {
+            "johnpbloch/wordpress-core-installer": true
+        }},
+    "repositories": [
+      {
+        "type": "composer",
+        "url": "https://wpackagist.org"
+      }
+    ],
+    "require": {
+      "php": ">=8.0",
+        "johnpbloch/wordpress": "^6.0",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "extra": {
+      "installer-paths": {
+        "public/app/common/{$name}/": [
+          "type:wordpress-muplugin"
+        ],
+        "public/app/plugins/{$name}/": [
+          "type:wordpress-plugin"
+        ],
+        "public/app/themes/{$name}/": [
+          "type:wordpress-theme"
+        ]
+      },
+      "wordpress-install-dir": "public/cms"
+    },
+    "scripts": {}
+  }
